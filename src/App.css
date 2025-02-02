@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+body{
+  background-color: black;
+}
+
+.name{
+  font-family: "Oswald", serif;
+  font-size: 280px;
+}
+@media (max-width:1606px) {
+  .name{
+    font-size: 260px;
+  }
+}
+@media (max-width:1491px) {
+  .name{
+    font-size: 230px;
+  }
+}
+@media (max-width:1319px) {
+  .name{
+    font-size: 200px;
+  }
+}
+@media (max-width:1150px) {
+  .name{
+    font-size: 170px;
+  }
+}
+@media (max-width:990px) {
+  .name{
+    font-size: 160px;
+  }
+}
+@media (max-width:920px) {
+  .name{
+    font-size: 140px;
+  }
+}
+@media (max-width:803px) {
+  .name{
+    font-size: 115px;
+  }
+}
+@media (max-width:670px) {
+  .name{
+    font-size: 150px;
+  }
+}
+@media (max-width:441px) {
+  .name{
+    font-size: 130px;
+  }
+  .image{
+    margin-top: 80px;
+  }
+}
+@media (max-width:393px) {
+  .name{
+    font-size: 125px;
+  }
+}
+@media (max-width:350px) {
+  .name{
+    font-size: 100px;
+  }
+  .image{
+    width: 260px;
+  }
+}
+
+/* ------------------ Contact Button --------------- */
+/* From Uiverse.io by Wendell47 */ 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  z-index: 1111111110;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hoverEffect div {
+  background: rgb(222, 0, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 0, 75, 1) 0%,
+    rgba(191, 70, 255, 1) 49%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 40rem;
+  width: 15rem;
+  height: 15rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+  /* width: 8rem;
+  height: 8rem; */
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 1150px){
+  .button{
+    /* width: 120px;
+    height: 54px; */
+    font-size: 29px;
+    padding: 19px 49px;
+  }
+}
+@media (max-width: 841px) and (min-width: 767px) {
+  .button{
+    /* width: 120px;
+    height: 54px; */
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* ------------------ Contact Button --------------- */
+
+@media (min-width: 767px) {
+  .description{
+    font-size: 10px;
+  }
+}
+@media (min-width: 900px) {
+  .description{
+    font-size: 15px;
+  }
+}
+@media (min-width: 1150px) {
+  .description{
+    font-size: 20px;
+  }
+}
+@media (min-width: 1460px) {
+  .description{
+    font-size: 25px;
+  }
+}
