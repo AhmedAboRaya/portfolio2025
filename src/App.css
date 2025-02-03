@@ -205,3 +205,52 @@ body{
     font-size: 25px;
   }
 }
+.aboutTitle, .aboutDescription{
+  font-family: "Oswald", serif;
+}
+
+
+@media (max-width: 1460px) {
+  .aboutTitle{
+    font-size: 7rem;
+  }
+}
+@media (max-width: 1200px) {
+  .aboutTitle{
+    font-size: 6rem;
+  }
+}
+@media (max-width: 767px) {
+  .aboutTitle{
+    font-size: 5rem;
+  }
+}
+@media (max-width: 550px) {
+  .aboutTitle{
+    font-size: 4rem;
+  }
+}
+
+
+@media (max-width: 1460px) {
+  .aboutTitle{
+    font-size: 7rem;
+  }
+}
+@media (max-width: 1200px) {
+  .aboutTitle{
+    font-size: 6rem;
+  }
+}
+@media (max-width: 767px) {
+  .aboutTitle{
+    font-size: 5rem;
+  }
+}
+@media (max-width: 550px) {
+  .aboutTitle{
+    font-size: 4rem;
+  }
+}
+
+

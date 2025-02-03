@@ -12,7 +12,7 @@ const TrueFocus = ({
   manualMode = false,
   blurAmount = 5,
   borderColor = "green",
-  glowColor = "rgba(0, 255, 0, 0.6)",
+  glowColor = "rgba(99, 255, 0, 0.6)",
   animationDuration = 0.5,
   pauseBetweenAnimations = 1,
 }) => {
@@ -74,13 +74,14 @@ const TrueFocus = ({
       className="relative flex gap-4 justify-center items-center flex-wrap text-white"
       ref={containerRef}
     >
+            
       {words.map((word, index) => {
         const isActive = index === currentIndex;
         return (
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
-            className="relative text-[3rem] font-black cursor-pointer"
+            className="relative cursor-pointer name font-extrabold"
             style={{
               filter: manualMode
                 ? isActive

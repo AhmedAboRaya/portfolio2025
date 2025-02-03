@@ -36,7 +36,6 @@ const Home = () => {
       <div className="hidden md:block md:-mt-96">
         <TextPressure />
       </div>
-      <TrueFocus />
     </div>
   );
 };
