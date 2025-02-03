@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /*
 	jsrepo 1.29.1
 	Installed from https://reactbits.dev/tailwind/
@@ -8,7 +9,6 @@
 import { useEffect, useRef } from "react";
 
 function SplashCursor({
-  // Add whatever props you like for customization
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
@@ -1239,7 +1239,6 @@ function SplashCursor({
     });
 
     updateFrame();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     SIM_RESOLUTION,
     DYE_RESOLUTION,

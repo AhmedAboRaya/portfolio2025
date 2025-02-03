@@ -23,7 +23,7 @@ const Image = () => {
       </h1>
       <img
         src={image}
-        className="absolute object-cover w-[70%] md:w-auto md:h-2/3 image z-50"
+        className="absolute  w-[70%] md:w-auto md:h-2/3 image z-50"
         style={{
           transform: `translate(-50%, -50%) translate(${position.x}px, ${position.y}px)`,
           top: "50%",

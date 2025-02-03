@@ -1,5 +1,6 @@
 import "./App.css";
 import SplashCursor from "./blocks/Animations/SplashCursor/SplashCursor";
+import TextPressure from "./blocks/TextAnimations/TextPressure/TextPressure";
 import Home from "./components/Home";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
         <Home />
       </div>
 
-      <div className="h-screen text-white">ds</div>
+      <div className="h-screen text-white">w</div>
     </SplashCursor>
   );
 }
