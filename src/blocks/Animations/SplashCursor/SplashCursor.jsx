@@ -1183,13 +1183,23 @@ function SplashCursor({
       }
     );
 
+    document.body.addEventListener("touchmove", (e) => {
+      const touches = e.targetTouches;
+      let pointer = pointers[0];
+      for (let i = 0; i < touches.length; i++) {
+        let posX = scaleByPixelRatio(touches[i].clientX);
+        let posY = scaleByPixelRatio(touches[i].clientY);
+        updatePointerMoveData(pointer, posX, posY, pointer.color);
+      }
+    }, { passive: true });
+
     window.addEventListener("mousemove", (e) => {
       let pointer = pointers[0];
       let posX = scaleByPixelRatio(e.clientX);
       let posY = scaleByPixelRatio(e.clientY);
       let color = pointer.color;
       updatePointerMoveData(pointer, posX, posY, color);
-    });
+    }, { passive: true })
 
     document.body.addEventListener(
       "touchstart",
@@ -1256,18 +1266,21 @@ function SplashCursor({
     TRANSPARENT,
   ]);
 
-  return (
-    <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
-      {/* Canvas for the fluid effect */}
-      <canvas ref={canvasRef} id="fluid" className="fixed top-0 left-0 w-full h-full" />
+  
 
-      {/* Scrollable content */}
-      <div className="relative z-[1000] pointer-events-auto overflow-y-auto h-full">
+  return (
+    <>
+      {/* Fluid effect canvas */}
+      <canvas 
+        ref={canvasRef} 
+        className="fixed top-0 left-0 w-full h-full pointer-events-none" 
+      />
+      
+      {/* Content container */}
+      <div className="relative z-10 pointer-events-auto">
         {children}
       </div>
-    </div>
+    </>
   );
-  
 }
-
 export default SplashCursor;
