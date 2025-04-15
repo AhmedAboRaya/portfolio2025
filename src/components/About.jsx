@@ -1,68 +1,120 @@
-"use client";
-// import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-// import SplitText from "../blocks/TextAnimations/SplitText/SplitText";
-import react from "../assets/react.png"
-import node from "../assets/node.png"
-import tailwind from "../assets/tailwind.png"
-import html from "../assets/html.png"
+import { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import react from "../assets/react.png";
+import node from "../assets/node.png";
+import tailwind from "../assets/tailwind.png";
+import html from "../assets/html.png";
+import { TextGenerateEffectDemo } from "./ui/TextGenerateEffectDemo";
 
 const About = () => {
-  const { scrollYProgress } = useScroll();
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
+  // Calculate rotation factors - adjust these values to control rotation speed
+  const reactRotation = scrollPosition * 0.5;
+  const tailwindRotation = -scrollPosition * 0.3;
+  const nodeRotation = scrollPosition * 0.4;
+  const htmlRotation = -scrollPosition * 0.2;
+  
   return (
-    <div className="relative min-h-screen w-full mt-24 flex items-center flex-col overflow-hidden">
+    <div className="relative py-16 md:py-36 w-full mt-24 flex items-center flex-col overflow-x-hidden">
       {/* About Title */}
-      <h1 className="aboutTitle text-white font-extrabold text-center text-9xl">
+      <motion.h1
+        className="aboutTitle text-white font-extrabold text-center text-9xl"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: false }}
+        exit={{ opacity: 0, y: -50 }}
+      >
         ABOUT ME
-      </h1>
+      </motion.h1>
       
       {/* About Description */}
-      <p className="text-center text-white px-7 sm:px-0 sm:w-[70%] mt-10 aboutDescription">
-        Hey, I’m Ahmed! I’m a Full-Stack Developer with a passion for building
-        web applications that are as smooth as they are powerful. Whether it’s
-        crafting beautiful, responsive interfaces or designing scalable back-end
-        systems, I love turning ideas into reality with clean, efficient code.
-        I’ve worked on educational platforms, project management tools, and
-        business solutions, always striving to create seamless user experiences.
-        My tech stack includes Next.js, React, Tailwind CSS, JavaScript,
-        TypeScript, Node.js, Express.js, and MongoDB, but I’m always exploring
-        new tools to stay ahead. Beyond coding, I thrive in collaborative
-        environments where ideas flow freely, challenges fuel innovation, and
-        every project is an opportunity to grow. If you’re looking for a
-        developer who’s passionate, driven, and always ready to tackle the next
-        big thing—let’s connect!
-      </p>
-
+      <motion.p
+        className="text-center text-white px-7 text-2xl sm:px-0 sm:w-[70%] mt-10 aboutDescription md:mb-32"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: false }}
+        exit={{ opacity: 0, y: 50 }}
+      >
+        <TextGenerateEffectDemo />
+      </motion.p>
+      
       {/* Animated Corner Images */}
-      <motion.img
-        src={react}
-        alt="Heart 1"
-        className="absolute top-0 left-0 w-32 h-32"
-        style={{ rotate }}
-      />
-
-      <motion.img
-        src={tailwind}
-        alt="Heart 2"
-        className="absolute top-0 right-0 w-32 h-32"
-        style={{ rotate }}
-      />
-
-      <motion.img
-        src={node}
-        alt="Heart 3"
-        className="absolute bottom-0 left-0 w-32 h-32"
-        style={{ rotate }}
-      />
-
-      <motion.img
-        src={html}
-        alt="Heart 4"
-        className="absolute bottom-0 right-0 w-32 h-32"
-        style={{ rotate }}
-      />
+      <div className="hidden md:block absolute inset-0 pointer-events-none">
+        {/* React Logo */}
+        <motion.div
+          className="absolute top-10 left-10 w-32 h-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          style={{
+            transform: `rotate(${reactRotation}deg)`,
+            transition: "transform 0.1s linear"
+          }}
+        >
+          <img src={react} alt="React" className="w-full h-full" />
+        </motion.div>
+        
+        {/* Tailwind Logo */}
+        <motion.div
+          className="absolute top-10 right-10 w-32 h-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          style={{
+            transform: `rotate(${tailwindRotation}deg)`,
+            transition: "transform 0.1s linear"
+          }}
+        >
+          <img src={tailwind} alt="Tailwind" className="w-full h-full" />
+        </motion.div>
+        
+        {/* Node.js Logo */}
+        <motion.div
+          className="absolute bottom-10 left-10 w-32 h-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          style={{
+            transform: `rotate(${nodeRotation}deg)`,
+            transition: "transform 0.1s linear"
+          }}
+        >
+          <img src={node} alt="Node" className="w-full h-full" />
+        </motion.div>
+        
+        {/* HTML Logo */}
+        <motion.div
+          className="absolute bottom-10 right-10 w-32 h-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          style={{
+            transform: `rotate(${htmlRotation}deg)`,
+            transition: "transform 0.1s linear"
+          }}
+        >
+          <img src={html} alt="HTML" className="w-full h-full" />
+        </motion.div>
+      </div>
     </div>
   );
 };
