@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react"; // Import icons for menu toggle
 import { Transition } from "@headlessui/react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if( window.scrollY  > 200 ) {
+      setScrollPosition(window.scrollY);
+      console.log(scrollPosition);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full bg-transparent shadow-md z-[1000]">
@@ -13,7 +26,6 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6 text-gray-800">
-          <a href="#home" className="hover:text-pink-500">Home</a>
           <a href="#about" className="hover:text-pink-500">About</a>
           <a href="#certificates" className="hover:text-pink-500">Certificates</a>
           <a href="#projects" className="hover:text-pink-500">Projects</a>
@@ -41,7 +53,6 @@ const Header = () => {
       >
         <div className="md:hidden absolute w-full bg-white shadow-lg">
           <nav className="flex flex-col items-center gap-4 py-4">
-            <a href="#home" className="text-gray-800 hover:text-pink-500" onClick={() => setIsOpen(false)}>Home</a>
             <a href="#about" className="text-gray-800 hover:text-pink-500" onClick={() => setIsOpen(false)}>About</a>
             <a href="#certificates" className="text-gray-800 hover:text-pink-500" onClick={() => setIsOpen(false)}>Certificates</a>
             <a href="#projects" className="text-gray-800 hover:text-pink-500" onClick={() => setIsOpen(false)}>Projects</a>
