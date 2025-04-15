@@ -1,10 +1,9 @@
-import GradientText from "../blocks/TextAnimations/GradientText/GradientText";
 import TextPressure from "../blocks/TextAnimations/TextPressure/TextPressure";
-import TrueFocus from "../blocks/TextAnimations/TrueFocus/TrueFocus";
 import Header from "./Header";
 import Image from "./Image";
 import ContactButton from "./ui/ContactButton";
 import { Spotlight } from "./ui/spotlight-new";
+import { motion, useInView } from "framer-motion";
 
 const Home = () => {
   return (
@@ -14,28 +13,27 @@ const Home = () => {
         <div className="fixed top-0 left-0 w-full">
           <Spotlight />
         </div>
-
-        <Image />
+        <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  viewport={{ once: false }}
+                  exit={{ opacity: 0 }}>
+          <Image />
+        </motion.div>
+        
         <div className="flex justify-center md:justify-between w-full">
-          {/* <GradientText className="hidden  description">
-          A FULL-STACK ENGINEER PASSIONATE <br />
-              ABOUT BUILDING SCALABLE AND
-              <br />
-              INNOVATIVE WEB SOLUTIONS
-
-          </GradientText> */}
-          {/* <p className="hidden md:block description text-white">
-          A FULL-STACK ENGINEER PASSIONATE <br />
-              ABOUT BUILDING SCALABLE AND
-              <br />
-              INNOVATIVE WEB SOLUTIONS
-          </p> */}
           <ContactButton />
         </div>
       </section>
-      <div className="hidden md:block md:-mt-96">
+      <motion.div className="hidden md:block md:-mt-96 relative z-[-1]"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                viewport={{ once: false }}
+                exit={{ opacity: 0, y: 50 }} >
         <TextPressure />
-      </div>
+      </motion.div>
     </div>
   );
 };
