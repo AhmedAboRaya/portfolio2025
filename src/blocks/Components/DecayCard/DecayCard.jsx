@@ -114,54 +114,11 @@ const DecayCard = ({
   return (
     <div
       ref={svgRef}
-      className="relative hover:transform-none" // Add this to prevent hover effects
-      style={{ width: `${width}px`, height: `${height}px` }}
+      className="relative " // Add this to prevent hover effects
+      // style={{ width: `${width}px`, height: `${height}px` }}
     >
-      <svg
-        viewBox="-60 -75 720 900"
-        preserveAspectRatio="xMidYMid slice"
-        className="relative w-full h-full block [will-change:transform]"
-      >
-        <filter id="imgFilter">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.015"
-            numOctaves="5"
-            seed="4"
-            stitchTiles="stitch"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="turbulence1"
-          />
-          <feDisplacementMap
-            ref={displacementMapRef}
-            in="SourceGraphic"
-            in2="turbulence1"
-            scale="0"
-            xChannelSelector="R"
-            yChannelSelector="B"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="displacementMap3"
-          />
-        </filter>
-        <g>
-          {/* <image
-            href={image}
-            x="0"
-            y="0"
-            width="600"
-            height="750"
-            filter="url(#imgFilter)"
-            preserveAspectRatio="xMidYMid slice"
-          /> */}
-        </g>
-      </svg>
-      <div className="absolute bottom-[1.2em] left-[1em] tracking-[-0.5px] font-black text-[2.5rem] leading-[1.5em] first-line:text-[6rem] pointer-events-none">
+
+      <div className="tracking-[-0.5px] font-black text-[2.5rem] leading-[1.5em] first-line:text-[6rem]">
         {children}
       </div>
     </div>
