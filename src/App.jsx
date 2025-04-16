@@ -5,7 +5,7 @@ import Gallary from "./components/Gallary";
 import Home from "./components/Home";
 import { Ripple } from "./components/magicui/ripple";
 import Project from "./components/Projects";
-import Skills from "./components/Skills";
+import Skills from "./components/Features";
 import Separator from "./components/ui/Separator";
 
 function App() {
