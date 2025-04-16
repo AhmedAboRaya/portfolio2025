@@ -8,6 +8,7 @@ const MotionWrapper = ({
   delay = 0,
   duration = 0.8,
   threshold = 0.2,
+  className = "",
 }) => {
   const [ref, inView] = useInView({ triggerOnce: false, threshold });
 
@@ -51,6 +52,7 @@ const MotionWrapper = ({
       initial={selectedAnimation.initial}
       animate={inView ? selectedAnimation.animate : selectedAnimation.initial}
       transition={{ duration, delay, ease: "easeOut" }}
+      className={`${className}`}
     >
       {children}
     </motion.div>
