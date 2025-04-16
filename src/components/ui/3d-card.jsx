@@ -46,16 +46,17 @@ export const CardContainer = ({
         }}>
         <div
           ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
-            className
-          )}
-          style={{
-            transformStyle: "preserve-3d",
-          }}>
+          // onMouseEnter={handleMouseEnter}
+          // onMouseMove={handleMouseMove}
+          // onMouseLeave={handleMouseLeave}
+          // className={cn(
+          //   "flex items-center justify-center relative transition-all duration-200 ease-linear",
+          //   className
+          // )}
+          // style={{
+          //   transformStyle: "preserve-3d",
+          // }}
+          >
           {children}
         </div>
       </div>
