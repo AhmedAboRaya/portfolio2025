@@ -26,6 +26,7 @@ import express from "@/../assets/express.png";
 import { AnimatedSpan, Terminal, TypingAnimation } from "./magicui/terminal";
 import { motion } from "framer-motion";
 import MotionWrapper from "./ui/MotionWrapper";
+import { World } from "./ui/globe";
 
 const clientBenefits = [
   {
@@ -141,7 +142,8 @@ function Skills() {
         </div>
         <div className="flex justify-center items-center h-full w-full">
           <MotionWrapper>
-            <Globe />
+            {/* <Globe /> */}
+            <World />
           </MotionWrapper>
         </div>
         <div className="grid grid-rows-2">
@@ -207,11 +209,17 @@ function Skills() {
       </div>
 
       <div className="xl:hidden flex flex-col items-center justify-center w-full h-full">
-        <MotionWrapper className="w-full">
-          <Globe className="w-[90%]" />
+        <MotionWrapper className="w-full flex justify-center items-center" style={{
+  width: '70%',
+  height: '100vh',
+  maxWidth: '700px',
+  margin: '0 auto'
+}}>
+          {/* <Globe className="w-[90%]" /> */}
+          <World />
         </MotionWrapper>
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="relative flex max-h-[400px] min-h-[400px] w-full max-w-[32rem] flex-col overflow-hidden rounded-lg">
+        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 md:-translate-y-72">
+          <div className="relative flex max-h-[400px] min-h-[400px] w-full md:w-fit max-w-[32rem] flex-col overflow-hidden rounded-lg">
             <AnimatedList>
               {extendedClientBenefits.map((item, idx) => (
                 <Notification {...item} key={idx} />

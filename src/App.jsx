@@ -7,6 +7,7 @@ import { Ripple } from "./components/magicui/ripple";
 import Project from "./components/Projects";
 import Skills from "./components/Features";
 import Separator from "./components/ui/Separator";
+import SpaceAnimation from "./components/SpaceAnimation";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <SplashCursor />
       <main className="min-h-screen">
         {/* Your content components */}
+        <SpaceAnimation />
         <Home />
-        <Ripple />
+        {/* <Ripple /> */}
 
         <About />
         {/* <Separator /> */}

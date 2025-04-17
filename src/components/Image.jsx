@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import image from "../assets/image.png";
+import image from "../assets/image2.png";
 import TrueFocus from "../blocks/TextAnimations/TrueFocus/TrueFocus";
 
 const Image = () => {
