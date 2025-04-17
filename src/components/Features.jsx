@@ -209,12 +209,15 @@ function Skills() {
       </div>
 
       <div className="xl:hidden flex flex-col items-center justify-center w-full h-full">
-        <MotionWrapper className="w-full flex justify-center items-center" style={{
-  width: '70%',
-  height: '100vh',
-  maxWidth: '700px',
-  margin: '0 auto'
-}}>
+        <MotionWrapper
+          className="w-full flex justify-center items-center"
+          style={{
+            width: "100%",
+            height: "100vh",
+            maxWidth: "700px",
+            margin: "0 auto",
+          }}
+        >
           {/* <Globe className="w-[90%]" /> */}
           <World />
         </MotionWrapper>

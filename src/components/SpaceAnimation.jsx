@@ -60,7 +60,7 @@ const TwinklingStars = () => {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 w-full h-full overflow-hidden"
+      className="fixed inset-0 w-full h-full "
     />
   );
 };

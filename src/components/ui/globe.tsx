@@ -217,20 +217,52 @@ export function WebGLRendererConfig() {
     const scene = new Scene();
     scene.fog = new Fog(0xffffff, 400, 2000);
     
+    // State for field of view
+    const [fov, setFov] = useState(50);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        // Check if mobile (you can adjust this breakpoint as needed)
+        const isMobile = window.innerWidth <= 768;
+        setFov(isMobile ? 55 : 50);
+      };
+  
+      // Initial check
+      handleResize();
+      
+      // Add event listener
+      window.addEventListener('resize', handleResize);
+      
+      // Cleanup
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
     return (
       <Canvas 
         scene={scene} 
-        camera={new PerspectiveCamera(50, 1, 180, 2800)}
+        camera={new PerspectiveCamera(fov, 1, 180, 2800)}
         style={{
           width: '100%',
           height: '100%',
-          maxWidth: '700px', // Optional max size
-          margin: '0 auto' // Center the canvas
+          maxWidth: '700px', 
+          margin: '0 auto' 
         }}
       >
         <WebGLRendererConfig />
         <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
-        {/* ... rest of your lights ... */}
+        <directionalLight
+          color={globeConfig.directionalLeftLight}
+          position={new Vector3(-400, 100, 400)}
+        />
+        <directionalLight
+          color={globeConfig.directionalTopLight}
+          position={new Vector3(-200, 500, 200)}
+        />
+        <pointLight
+          color={globeConfig.pointLight}
+          position={new Vector3(-200, 500, 200)}
+          intensity={0.8}
+        />
         <Globe {...props} globeConfig={globeConfig} />
         <OrbitControls
           enablePan={false}

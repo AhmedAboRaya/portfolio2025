@@ -17,8 +17,9 @@ const Home = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
-                  viewport={{ once: false }}
-                  exit={{ opacity: 0 }}>
+                  // viewport={{ once: false }}
+                  // exit={{ opacity: 0 }}
+                  >
           <Image />
         </motion.div>
         

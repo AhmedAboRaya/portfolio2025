@@ -8,7 +8,7 @@ const Notification = ({ name, description, icon, color, time }) => {
       className={cn(
         "relative mx-auto min-h-fit w-full  cursor-pointer overflow-hidden rounded-2xl p-4 border border-border/30",
         // animation styles
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
+        "transition-all duration-200 ease-in-out",
         // light styles
         "text-white bg-[#0B0B0B]/60 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
