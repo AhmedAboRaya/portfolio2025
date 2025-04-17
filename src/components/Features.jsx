@@ -27,6 +27,7 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "./magicui/terminal";
 import { motion } from "framer-motion";
 import MotionWrapper from "./ui/MotionWrapper";
 import { World } from "./ui/globe";
+import { TextAnimate } from "./magicui/text-animate";
 
 const clientBenefits = [
   {
@@ -116,14 +117,15 @@ function Skills() {
   return (
     <section className="container mx-auto flex flex-col items-center justify-between w-full min-h-screen p-5">
       <motion.h1
-        className="aboutTitle text-white font-extrabold text-center text-9xl mb-20"
+        className="aboutTitle text-white font-extrabold text-center text-9xl mb-20 relative"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: false }}
         exit={{ opacity: 0, y: -50 }}
       >
-        FEATURES
+        <TextAnimate animation="blurInUp" by="character">
+        FEATURES</TextAnimate>
       </motion.h1>
       <div className="hidden xl:grid grid-cols-3 relative w-full gap-4">
         <div className="grid grid-rows-2">
