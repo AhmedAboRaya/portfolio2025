@@ -8,6 +8,7 @@ import Project from "./components/Projects";
 import Skills from "./components/Features";
 import Separator from "./components/ui/Separator";
 import SpaceAnimation from "./components/SpaceAnimation";
+import { TechStack } from "./components/TeckStack";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Skills />
         {/* <Gallary /> */}
         <Project />
+
+        <TechStack />
       </main>
     </>
   );
