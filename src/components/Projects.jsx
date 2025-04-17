@@ -2,8 +2,30 @@ import DecayCard from "@/blocks/Components/DecayCard/DecayCard";
 import { motion } from "framer-motion";
 import { ThreeDCardDemo } from "./ui/ThreeDCardDemo";
 import MotionWrapper from "./ui/MotionWrapper";
+import react from "@/../assets/react.png";
+import html from "@/../assets/html.png";
+import cpp from "@/../assets/cpp.png";
+import css from "@/../assets/css.png";
+import git from "@/../assets/git.png";
+import githup from "@/../assets/githup.png";
+import js from "@/../assets/js.png";
+import mongo from "@/../assets/mongo.png";
+import node from "@/../assets/node2.png";
+import tailwind from "@/../assets/tailwind2.png";
+import ts from "@/../assets/ts.png";
+import sass from "@/../assets/sass.png";
+import next from "@/../assets/next.png";
+import figma from "@/../assets/figma.png";
+import apis from "@/../assets/apis.png";
+import postman from "@/../assets/postman.png";
+import mysql from "@/../assets/mysql.png";
+import redux from "@/../assets/redux.png";
+import express from "@/../assets/express.png";
+import { TextAnimate } from "./magicui/text-animate";
 
 function Project() {
+
+
   const projects = [
     {
       title: "Waqar",
@@ -11,6 +33,7 @@ function Project() {
       description: "Online store for traditional wear.",
       tryLink: "https://waqar-shemagh.vercel.app/",
       img: "/waqar.png",
+      tech: [next, ts, tailwind, node, express, mongo, redux, figma],
     },
     {
       title: "Esrark",
@@ -19,6 +42,7 @@ function Project() {
       link: "https://youtu.be/cfdE0iwIJAE",
       tryLink: "https://esrark.vercel.app/",
       img: "/esrark.png",
+      tech: [react, js, tailwind, node, express, mongo, figma],
     },
     {
       title: "MedReserve",
@@ -26,6 +50,7 @@ function Project() {
       description: "Book visits and track meds.",
       link: "https://github.com/AhmedAboRaya/MedReserve.git",
       img: "/MedRev.png",
+      tech: [ js, node, express, mongo, postman, figma],
     },
     {
       title: "Manasety",
@@ -34,6 +59,7 @@ function Project() {
       link: "https://youtu.be/p5cD14k9Loc",
       tryLink: "https://manasty-phi.vercel.app/",
       img: "/Manasety.png",
+      tech: [react, js, tailwind, node, express, mongo, figma,],
     },
     {
       title: "Egy-Rack",
@@ -42,6 +68,7 @@ function Project() {
       link: "https://youtu.be/ofzGAVZGfEY",
       tryLink: "https://egy-rack.vercel.app/",
       img: "/EgyRack.png",
+      tech: [react, js, tailwind, node, express, mongo, figma,],
     },
     {
       title: "TaskTracker",
@@ -50,6 +77,7 @@ function Project() {
       link: "https://youtu.be/GC8Z3Z1Z7-Q",
       tryLink: "https://depi-final-project-m1eh.vercel.app/",
       img: "/taskTracker.png",
+      tech: [react, js, tailwind, node, express, mongo],
     },
 
     // {
@@ -66,6 +94,8 @@ function Project() {
     // },
   ];
 
+  
+
   return (
     <setion className="min-h-screen mt-20 md:mt-32 flex flex-col items-center justify-center px-5">
       <motion.h1
@@ -76,11 +106,12 @@ function Project() {
         viewport={{ once: false }}
         exit={{ opacity: 0, y: -50 }}
       >
-        PROJECTS
+        <TextAnimate animation="blurInUp" by="character">
+        PROJECTS</TextAnimate>
       </motion.h1>
       <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 ">
         {projects.map((project, index) => (
-          <MotionWrapper animationType="slideUp" key={index} delay={index * 0.3}>
+          <MotionWrapper animationType="slideUp" key={index} delay={index * 0.1}>
             <DecayCard>
               <ThreeDCardDemo
                 title={project.title}
@@ -89,6 +120,7 @@ function Project() {
                 img={project.img}
                 tryLink={project.tryLink}
                 link={project.link}
+                tech={project.tech}
               />
             </DecayCard>
           </MotionWrapper>
