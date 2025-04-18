@@ -15,31 +15,38 @@ export function NavbarDemo() {
   const navItems = [
     {
       name: "Home",
-      link: "#home",
+      link: "home",
     },
     {
       name: "About",
-      link: "#abour",
+      link: "about",
     },
     {
       name: "Features",
-      link: "#features",
+      link: "features",
     },
     {
       name: "Project",
-      link: "#projects",
+      link: "projects",
     },
     {
       name: "Tech Stack",
-      link: "#techStack",
+      link: "techStack",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "contact",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollTo = (sec) => {
+    const section = document.getElementById(sec);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className=" w-full">
@@ -61,13 +68,12 @@ export function NavbarDemo() {
 
           <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (
-              <a
+              <span
                 key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {setIsMobileMenuOpen(false); scrollTo(item.link)}}
                 className="relative text-white">
                 <span className="block text-white">{item.name}</span>
-              </a>
+              </span>
             ))}
           </MobileNavMenu>
         </MobileNav>
