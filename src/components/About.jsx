@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 
   return (
-    <div className="relative py-16 md:py-36 w-full mt-24 flex items-center flex-col overflow-x-hidden">
+    <div id="about" className="relative py-16 md:py-36 w-full mt-24 flex items-center justify-center flex-col overflow-x-hidden md:min-h-screen">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl"
         initial={{ opacity: 0, y: -50 }}
