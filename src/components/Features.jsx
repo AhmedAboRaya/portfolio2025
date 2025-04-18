@@ -115,9 +115,9 @@ const extendedClientBenefits = Array(30)
   .flatMap(() => [...clientBenefits]);
 function Features() {
   return (
-    <section className="container mx-auto flex flex-col items-center justify-between w-full min-h-screen p-5">
+    <section className="container mx-auto flex flex-col items-center justify-between w-full py-28 p-5">
       <motion.h1
-        className="aboutTitle text-white font-extrabold text-center text-9xl mb-20 relative"
+        className="aboutTitle text-white font-extrabold text-center text-9xl mb-36 md:mb-20 relative"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -125,7 +125,8 @@ function Features() {
         exit={{ opacity: 0, y: -50 }}
       >
         <TextAnimate animation="blurInUp" by="character">
-        FEATURES</TextAnimate>
+          FEATURES
+        </TextAnimate>
       </motion.h1>
       <div className="hidden xl:grid grid-cols-3 relative w-full gap-4">
         <div className="grid grid-rows-2">
@@ -223,7 +224,7 @@ function Features() {
           {/* <Globe className="w-[90%]" /> */}
           <World />
         </MotionWrapper>
-        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -translate-y-[44rem] md:-translate-y-[34rem]">
+        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -translate-y-[37rem] md:-translate-y-[34rem]">
           <div className="relative flex max-h-[400px] min-h-[400px] w-full md:w-fit max-w-[32rem] flex-col overflow-hidden rounded-lg">
             <AnimatedList>
               {extendedClientBenefits.map((item, idx) => (
