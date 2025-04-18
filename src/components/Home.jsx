@@ -17,15 +17,15 @@ const Home = () => {
         <div className="fixed top-0 left-0 w-full">
           <Spotlight />
         </div>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           // viewport={{ once: false }}
           // exit={{ opacity: 0 }}
-        >
+        > */}
           <Image />
-        </motion.div>
+        {/* </motion.div> */}
 
       </section>
       <motion.div
