@@ -1,16 +1,19 @@
 import TextPressure from "../blocks/TextAnimations/TextPressure/TextPressure";
 import Header from "./Header";
 import Image from "./Image";
-import ContactButton from "./ui/ContactButton";
 import { Spotlight } from "./ui/spotlight-new";
 import { motion } from "framer-motion";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { NavbarDemo } from "./ui/NavDemo";
 const Home = () => {
   return (
     <div className="">
       <section className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 overflow-hidden">
         <ScrollProgress />
-        <Header />
+        <div className="fixed top-0 left-0 w-full md:px-10 z-50">
+          <NavbarDemo />
+        </div>
+        
         <div className="fixed top-0 left-0 w-full">
           <Spotlight />
         </div>
@@ -24,9 +27,6 @@ const Home = () => {
           <Image />
         </motion.div>
 
-        <div className="flex justify-center md:justify-between w-full">
-          <ContactButton />
-        </div>
       </section>
       <motion.div
         className="hidden md:block md:-mt-96 relative z-[-1]"
