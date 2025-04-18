@@ -71,6 +71,13 @@ export const NavBody = ({ children, className, visible }) => {
   );
 };
 
+const scrollTo = (sec) => {
+  const section = document.getElementById(sec);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 export const NavItems = ({ items, className, onItemClick }) => {
   const [hovered, setHovered] = useState(null);
 
@@ -85,10 +92,10 @@ export const NavItems = ({ items, className, onItemClick }) => {
       {items.map((item, idx) => (
         <a
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
+          onClick={() => {onItemClick; scrollTo(item.link)}}
           className="relative px-4 py-2 text-white text-lg group"
           key={`link-${idx}`}
-          href={item.link}
+          
         >
           {hovered === idx && (
             <motion.div
