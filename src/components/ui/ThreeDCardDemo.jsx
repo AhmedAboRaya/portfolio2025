@@ -38,8 +38,8 @@ export function ThreeDCardDemo({
           {disc ||
             "Hover over this card to unleash the power of CSS perspective"}</TextAnimate>
         </CardItem>
-        <CardItem className="w-full mt-4 ">
-        <TextAnimate animation="scaleUp" by="text">
+        <CardItem className="w-full mt-4">
+        <TextAnimate segmentClassName={"w-full"} className={"w-full"} animation="scaleUp" by="text">
           <img
             src={
               img ||
