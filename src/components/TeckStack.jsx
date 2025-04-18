@@ -109,12 +109,12 @@ const ReviewCard = ({ img, name, username, body }) => {
   return (
     <figure
       className={cn(
-        "relative px-6 cursor-pointer overflow-hidden rounded-xl p-4 bg-[#0B0B0B]/60 border border-border/30 hover:bg-[#0B0B0B]/80 hover:border-border/70 duration-300"
+        "relative px-6 flex items-center cursor-pointer overflow-hidden rounded-xl p-4 bg-[#0B0B0B]/60 border border-border/30 hover:bg-[#0B0B0B]/80 hover:border-border/70 duration-300"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
+      <div className="flex flex-row items-center justify-center gap-2 pr-16">
         <img className="" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center justify-center">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
@@ -125,7 +125,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 };
 export function TechStack() {
   return (
-    <section className="mt-10 md:mt-16">
+    <section id="techStack" className="mt-10 md:mt-16">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl mt-20 mb-10 md:mb-20 relative "
         initial={{ opacity: 0, y: -50 }}
