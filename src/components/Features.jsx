@@ -115,7 +115,7 @@ const extendedClientBenefits = Array(30)
   .flatMap(() => [...clientBenefits]);
 function Features() {
   return (
-    <section className="container mx-auto flex flex-col items-center justify-between w-full py-28 p-5">
+    <section id="features" className="container mx-auto flex flex-col items-center justify-between w-full py-28 p-5">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl mb-36 md:mb-20 relative"
         initial={{ opacity: 0, y: -50 }}
