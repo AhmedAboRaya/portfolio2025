@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 export default function FireflyButton({
   text,
   onClick,
-  backgroundColor = '#4BDE80',
+  backgroundColor = '#ffffff',
   textColor = '#000000',
-  glowColor = '#4BDE80',
+  glowColor = '#ffffff',
   fireflyCount = 7,
   fontSize = '1rem',
-  padding = '1rem 2rem',
+  padding = '0.5rem 1rem',
   className = ''
 }) {
   const dotVariants = {
@@ -89,7 +89,7 @@ export default function FireflyButton({
             opacity: `${[0.7, 0.7, 1, 0.9, 1, 0.7, 1][i % 7]}`,
           }}>
           <motion.span
-            className="block w-full h-full rounded-full"
+            className="block h-full rounded-full"
             variants={fireflyVariants}
             style={{
               backgroundColor: glowColor,
@@ -107,7 +107,7 @@ export default function FireflyButton({
         </motion.span>
       ))}
       <motion.span
-        className="relative z-10 inline-block rounded-full !hover:bg-[#4BDE80]"
+        className="relative z-10 inline-block rounded-full"
         variants={buttonVariants}
         style={{
           backgroundColor,
