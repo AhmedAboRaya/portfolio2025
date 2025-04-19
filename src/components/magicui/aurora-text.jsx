@@ -4,7 +4,7 @@ import React, { memo } from "react";
 export const AuroraText = memo(({
   children,
   className = "",
-  colors = ["#4BDE80", "#48c3d7", "#488ed7", "#485ad7"],
+  colors = ["#4BDE80", "#4BDE80", "#fff", "#fff"],
   speed = 1
 }) => {
   const gradientStyle = {
