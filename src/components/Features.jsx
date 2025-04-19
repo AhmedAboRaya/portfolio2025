@@ -222,7 +222,7 @@ function Features() {
         >
           <World />
         </MotionWrapper>
-        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -mt-[42rem] md:-mt-[34rem]">
+        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -mt-[36rem] md:-mt-[34rem]">
           <div className="relative flex max-h-[400px] min-h-[400px] w-full md:w-fit max-w-[32rem] flex-col overflow-hidden rounded-lg">
             <AnimatedList>
               {extendedClientBenefits.map((item, idx) => (
