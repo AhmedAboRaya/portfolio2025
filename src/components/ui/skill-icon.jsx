@@ -74,7 +74,7 @@ export default function SkillIcon({ name, icon, color, percentage, index }) {
           style={{
             boxShadow: `0 0 15px ${color}, 0 0 30px ${color}, inset 0 0 30px ${color}`,
             background: `radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%)`,
-            border: `5px solid ${color}`,
+            border: `2px solid ${color}`,
           }}
           whileHover={{ scale: 1.1 }}
           animate={{ rotate: 360 }}
