@@ -6,53 +6,55 @@ import { useState } from "react";
 import MotionWrapper from "./ui/MotionWrapper";
 import { World } from "./ui/globe";
 import FireflyButton from "./ui/firefly-button";
+import { PulsatingButton } from "./magicui/pulsating-button";
+import { RippleButton } from "./magicui/ripple-button";
 // import emailjs from "emailjs-com";
 
 const Contact = () => {
-  // const [formData, setFormData] = useState({
-  //     name: "",
-  //     email: "",
-  //     message: "",
-  //     to_name: "Ahmed AboRaya",
-  //   });
-  //   const [statusMessage, setStatusMessage] = useState("");
-  //   const [isSending, setIsSending] = useState(false);
+  const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      message: "",
+      to_name: "Ahmed AboRaya",
+    });
+    const [statusMessage, setStatusMessage] = useState("");
+    const [isSending, setIsSending] = useState(false);
 
-  //   const handleChange = (e) => {
-  //     setFormData({ ...formData, [e.target.name]: e.target.value });
-  //   };
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     setIsSending(true);
-  //     setStatusMessage("Sending...");
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setIsSending(true);
+      setStatusMessage("Sending...");
 
-  //     emailjs
-  //       .send(
-  //         "service_bplj1hc",
-  //         "template_skwh4ko",
-  //         formData,
-  //         "5eR8XMsDN1mBxKRpk"
-  //       )
-  //       .then(
-  //         (response) => {
-  //           setStatusMessage("Message sent successfully!");
-  //         },
-  //         (error) => {
-  //           console.error("EmailJS error:", error);
-  //           setStatusMessage("Failed to send message. Please try again later.");
-  //         }
-  //       )
-  //       .finally(() => {
-  //         setIsSending(false);
-  //         setFormData({
-  //           name: "",
-  //           email: "",
-  //           message: "",
-  //           to_name: "Ahmed AboRaya",
-  //         });
-  //       });
-  //   };
+      emailjs
+        .send(
+          "service_bplj1hc",
+          "template_skwh4ko",
+          formData,
+          "5eR8XMsDN1mBxKRpk"
+        )
+        .then(
+          (response) => {
+            setStatusMessage("Message sent successfully!");
+          },
+          (error) => {
+            console.error("EmailJS error:", error);
+            setStatusMessage("Failed to send message. Please try again later.");
+          }
+        )
+        .finally(() => {
+          setIsSending(false);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            to_name: "Ahmed AboRaya",
+          });
+        });
+    };
 
   return (
     <section
@@ -68,13 +70,13 @@ const Contact = () => {
         exit={{ opacity: 0, y: -50 }}
       >
         <TextAnimate animation="blurInUp" by="character">
-          Contact Me
+          Contact
         </TextAnimate>
       </motion.h1>
       <div className="flex flex-col gap-y-11 md:grid md:grid-cols-2 mt-20 container">
         <MotionWrapper
           animationType="slideRight"
-          className="text-7xl font-semibold"
+          className="text-4xl md:text-7xl font-semibold"
         >
           Have Any Project In <AuroraText>Mind?</AuroraText>
         </MotionWrapper>
@@ -91,7 +93,7 @@ const Contact = () => {
         </MotionWrapper>
         <MotionWrapper
           animationType="slideLeft"
-          className="relative rounded-xl px-8 md:px-12 lg:px-16 xl:px-20 py-20 bg-[#0B0B0B]/60 border border-border/30 w-full flex gap-5 flex-col  overflow-hidden"
+          className="relative rounded-xl px-8 md:px-12 lg:px-16 xl:px-20 py-7 md:py-12 lg:py-16 xl:py-20 bg-[#0B0B0B]/60 border border-border/30 w-full flex gap-5 flex-col  overflow-hidden"
         >
           <MotionWrapper delay={0.4} animationType="scall" className="relative">
             <input
@@ -162,18 +164,20 @@ const Contact = () => {
             </label>
           </MotionWrapper>
 
-          <FireflyButton
-            text="Glowing Button"
-            backgroundColor="#000000cc"
-            textColor="#ffffff"
-            glowColor="#4BDE80"
-            fireflyCount={15}
-            fontSize="1.2rem"
-            padding="1.5rem 3rem"
-            onClick={() => alert("Glowing button clicked!")}
-          />
-
-          <BorderBeam duration={8} size={100} />
+          <div className="w-full flex justify-center pt-4 md:pt-9">
+            <div>
+              <FireflyButton
+                text="Send"
+                backgroundColor="#000000cc"
+                textColor="#ffffff"
+                glowColor="#ffffff"
+                fireflyCount={15}
+                fontSize="1rem"
+                padding="1rem 3rem"
+                onClick={() => alert("Glowing button clicked!")}
+              />
+            </div>
+          </div>
         </MotionWrapper>
       </div>
     </section>
