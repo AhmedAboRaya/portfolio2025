@@ -71,7 +71,7 @@ const Contact = () => {
           Contact Me
         </TextAnimate>
       </motion.h1>
-      <div className="flex flex-col gap-y-11 z-50 md:grid md:grid-cols-2 mt-20 container">
+      <div className="flex flex-col gap-y-11 md:grid md:grid-cols-2 mt-20 container">
         <MotionWrapper
           animationType="slideRight"
           className="text-7xl font-semibold"
