@@ -115,7 +115,7 @@ const extendedClientBenefits = Array(30)
   .flatMap(() => [...clientBenefits]);
 function Features() {
   return (
-    <section id="features" className="container mx-auto flex flex-col items-center justify-between w-full py-28 p-5">
+    <section id="features" className="container mx-auto flex flex-col items-center justify-between w-full py-28 p-5 px-10">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl mb-36 md:mb-20 relative"
         initial={{ opacity: 0, y: -50 }}
@@ -145,7 +145,6 @@ function Features() {
         </div>
         <div className="flex justify-center items-center h-full w-full">
           <MotionWrapper>
-            {/* <Globe /> */}
             <World />
           </MotionWrapper>
         </div>
@@ -221,10 +220,9 @@ function Features() {
             margin: "0 auto",
           }}
         >
-          {/* <Globe className="w-[90%]" /> */}
           <World />
         </MotionWrapper>
-        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -translate-y-[37rem] md:-translate-y-[34rem]">
+        <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-4 -mt-[42rem] md:-mt-[34rem]">
           <div className="relative flex max-h-[400px] min-h-[400px] w-full md:w-fit max-w-[32rem] flex-col overflow-hidden rounded-lg">
             <AnimatedList>
               {extendedClientBenefits.map((item, idx) => (
@@ -233,7 +231,7 @@ function Features() {
             </AnimatedList>
           </div>
 
-          <MotionWrapper>
+          <MotionWrapper className="z-20">
             <Terminal>
               <TypingAnimation className="text-white">
                 &gt; pnpm start-project YOUR_IDEA
