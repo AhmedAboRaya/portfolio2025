@@ -89,7 +89,7 @@ function Project() {
   
 
   return (
-    <setion id="projects" className="min-h-screen pt-20 md:mt-32 flex flex-col items-center justify-center px-5">
+    <setion id="projects" className="min-h-screen pt-24 md:mt-32 flex flex-col items-center justify-center px-5">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl"
         initial={{ opacity: 0, y: -50 }}
