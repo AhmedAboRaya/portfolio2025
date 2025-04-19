@@ -3,10 +3,11 @@ import SplashCursor from "./blocks/Animations/SplashCursor/SplashCursor";
 import About from "./components/About";
 import Home from "./components/Home";
 import Project from "./components/Projects";
-import Skills from "./components/Features";
+import Features from "./components/Features";
 import SpaceAnimation from "./components/SpaceAnimation";
 import { TechStack } from "./components/TeckStack";
 import PreLoader from "./components/ui/pre-loader";
+import SkillsPage from "./components/Skills";
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
       <Home />
       <PreLoader />
       <About />
-      <Skills />
+      <Features />
       <Project />
+      <SkillsPage />
 
-      <TechStack />
+      {/* <TechStack /> */}
     </>
   );
 }
