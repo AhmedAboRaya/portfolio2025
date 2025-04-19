@@ -8,19 +8,22 @@ import SpaceAnimation from "./components/SpaceAnimation";
 import { TechStack } from "./components/TeckStack";
 import PreLoader from "./components/ui/pre-loader";
 import SkillsPage from "./components/Skills";
+import Particles from "./blocks/Backgrounds/Particles/Particles";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <>
       <SplashCursor />
-      <SpaceAnimation />
+      {/* <SpaceAnimation /> */}
+      <Particles />
       <Home />
       <PreLoader />
       <About />
       <Features />
       <Project />
       <SkillsPage />
-
+      <Contact />
       {/* <TechStack /> */}
     </>
   );
