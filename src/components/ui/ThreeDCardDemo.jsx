@@ -4,6 +4,7 @@ import { Pointer } from "../magicui/pointer";
 import { TextAnimate } from "../magicui/text-animate";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import {motion} from "framer-motion"
+import MotionWrapper from "./MotionWrapper";
 
 export function ThreeDCardDemo({
   title,
@@ -56,7 +57,7 @@ export function ThreeDCardDemo({
             const randomStart = Math.floor(Math.random() * 360);
 
             return (
-              <span
+              <MotionWrapper
                 key={index}
                 className="border border-[#4BDE80] rounded-full p-2 bg-black hover:scale-110 -ml-3 group duration-300"
                 style={{
@@ -64,13 +65,14 @@ export function ThreeDCardDemo({
                   animation: `spin 5s linear infinite`,
                   animationDirection: randomSpeed > 0 ? "normal" : "reverse",
                 }}
+                delay={index * 0.1}
               >
                 <img
                   src={item}
                   alt="tech"
                   className="size-6 transition-transform duration-300 group-hover:scale-105 group-hover:skew-x-12 group-hover:skew-y-6"
                 />
-              </span>
+              </MotionWrapper>
               
             );
           })}
