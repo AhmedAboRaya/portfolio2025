@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "./magicui/marquee";
 import { TextAnimate } from "./magicui/text-animate";
 import { motion } from "framer-motion";
-import { OrbitingCircles } from "./magicui/orbiting-circles";
 import react from "@/../assets/react.png";
 import html from "@/../assets/html.png";
 import cpp from "@/../assets/cpp.png";
@@ -125,7 +124,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 };
 export function TechStack() {
   return (
-    <section id="techStack" className="mt-10 md:mt-16">
+    <section className="mt-10 md:mt-16">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl mt-20 mb-10 md:mb-20 relative "
         initial={{ opacity: 0, y: -50 }}
