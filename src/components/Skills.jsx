@@ -17,7 +17,7 @@ export default function SkillsPage() {
   if (!mounted) return null
 
   return (
-    <div id='techStack' className="min-h-screen bg-black text-white flex flex-col items-center justify-center pt-10 py-12 px-4 overflow-hidden">
+    <div id='techStack' className="min-h-screen text-white flex flex-col items-center justify-center pt-10 py-12 px-4 overflow-hidden">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl mt-20 mb-10 md:mb-20 relative "
         initial={{ opacity: 0, y: -50 }}
