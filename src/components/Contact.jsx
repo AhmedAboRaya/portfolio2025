@@ -97,7 +97,7 @@ const Contact = () => {
 
         {/* Globe */}
         <MotionWrapper
-          className="w-full z-[-1] absolute flex justify-center items-center mt-24 md:mt-0"
+          className="w-full z-[-1] absolute flex justify-center items-center m-auto"
           style={{
             width: "100%",
             height: "100vh",
