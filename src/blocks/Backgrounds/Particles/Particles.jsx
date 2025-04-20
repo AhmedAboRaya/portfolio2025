@@ -4,6 +4,7 @@
 
 import { useEffect, useRef } from "react";
 import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
+import MotionWrapper from "@/components/ui/MotionWrapper";
 
 const defaultColors = ["#ffffff", "#ffffff", "#ffffff"];
 
@@ -235,7 +236,7 @@ const Particles = ({
   ]);
 
   return (
-    <div ref={containerRef} className={`w-full h-screen fixed top-0 left-0 z-[-1] ${className}`} />
+    <MotionWrapper ref={containerRef} className={`w-full h-screen fixed top-0 left-0 z-[-1] ${className}`} />
   );
 };
 
