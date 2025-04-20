@@ -14,6 +14,7 @@ import postman from "@/../assets/postman.png";
 import redux from "@/../assets/redux.png";
 import express from "@/../assets/express.png";
 import { TextAnimate } from "./magicui/text-animate";
+import { World } from "@/components/ui/globe";
 
 function Project() {
 
@@ -89,7 +90,7 @@ function Project() {
   
 
   return (
-    <setion id="projects" className="min-h-screen pt-24 md:mt-32 flex flex-col items-center justify-center px-5">
+    <setion id="projects" className="min-h-screen relative pt-24 md:mt-32 flex flex-col items-center justify-center px-5">
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl"
         initial={{ opacity: 0, y: -50 }}
@@ -118,6 +119,9 @@ function Project() {
           </MotionWrapper>
         ))}
       </div>
+      <MotionWrapper triggerOnce="true" className="absolute right-[50%] md:right-[75%] -bottom-[20%] z-[-1]" >
+        <World />
+      </MotionWrapper>
     </setion>
   );
 }
