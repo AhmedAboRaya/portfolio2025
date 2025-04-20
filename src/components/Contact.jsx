@@ -6,6 +6,8 @@ import MotionWrapper from "./ui/MotionWrapper";
 import { World } from "./ui/globe";
 import FireflyButton from "./ui/firefly-button";
 import emailjs from "@emailjs/browser";
+import { AnimatedBeam } from "./magicui/animated-beam";
+import { AnimatedBeamDemo } from "./ui/AnimatedBeamDemo";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -88,7 +90,14 @@ const Contact = () => {
           className="text-4xl md:text-7xl font-semibold"
         >
           Have Any Project In <AuroraText>Mind?</AuroraText>
+          <MotionWrapper animationType="rotate">
+          <AnimatedBeamDemo />
+          </MotionWrapper>
+          
+          
         </MotionWrapper>
+
+        {/* Globe */}
         <MotionWrapper
           className="w-full z-[-1] absolute flex justify-center items-center mt-24 md:mt-0"
           style={{
@@ -100,6 +109,8 @@ const Contact = () => {
         >
           <World />
         </MotionWrapper>
+
+        {/* Form */}
         <MotionWrapper
           animationType="slideLeft"
           className="relative rounded-xl px-8 md:px-12 lg:px-16 xl:px-20 py-7 md:py-12 lg:py-16 xl:py-20 bg-[#0B0B0B]/60 border border-border/30 w-full flex gap-5 flex-col overflow-hidden"
