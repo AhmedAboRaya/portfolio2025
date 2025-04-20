@@ -1,60 +1,69 @@
 import { AuroraText } from "./magicui/aurora-text";
-import { BorderBeam } from "./magicui/border-beam";
 import { motion } from "framer-motion";
 import { TextAnimate } from "./magicui/text-animate";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MotionWrapper from "./ui/MotionWrapper";
 import { World } from "./ui/globe";
 import FireflyButton from "./ui/firefly-button";
-import { PulsatingButton } from "./magicui/pulsating-button";
-import { RippleButton } from "./magicui/ripple-button";
-// import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      message: "",
-      to_name: "Ahmed AboRaya",
-    });
-    const [statusMessage, setStatusMessage] = useState("");
-    const [isSending, setIsSending] = useState(false);
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  useEffect(() => {
+    if (statusMessage) {
+      const timer = setTimeout(() => {
+        setStatusMessage("");
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [statusMessage]);
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      setIsSending(true);
-      setStatusMessage("Sending...");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-      emailjs
-        .send(
-          "service_bplj1hc",
-          "template_skwh4ko",
-          formData,
-          "5eR8XMsDN1mBxKRpk"
-        )
-        .then(
-          (response) => {
-            setStatusMessage("Message sent successfully!");
-          },
-          (error) => {
-            console.error("EmailJS error:", error);
-            setStatusMessage("Failed to send message. Please try again later.");
-          }
-        )
-        .finally(() => {
-          setIsSending(false);
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-            to_name: "Ahmed AboRaya",
-          });
-        });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatusMessage("Sending...");
+
+    try {
+      await emailjs.send(
+        "service_bplj1hc",
+        "template_n6nfhyh",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Ahmed AboRaya",
+        },
+        "5eR8XMsDN1mBxKRpk"
+      );
+
+      setStatusMessage("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatusMessage("Failed to send message. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <section
@@ -93,91 +102,110 @@ const Contact = () => {
         </MotionWrapper>
         <MotionWrapper
           animationType="slideLeft"
-          className="relative rounded-xl px-8 md:px-12 lg:px-16 xl:px-20 py-7 md:py-12 lg:py-16 xl:py-20 bg-[#0B0B0B]/60 border border-border/30 w-full flex gap-5 flex-col  overflow-hidden"
+          className="relative rounded-xl px-8 md:px-12 lg:px-16 xl:px-20 py-7 md:py-12 lg:py-16 xl:py-20 bg-[#0B0B0B]/60 border border-border/30 w-full flex gap-5 flex-col overflow-hidden"
         >
-          <MotionWrapper delay={0.4} animationType="scall" className="relative">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              // onChange={handleChange}
-              className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="name"
-              className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left  peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
-            >
-              Your Name
-            </label>
-          </MotionWrapper>
-          <MotionWrapper delay={0.5} animationType="scall" className="relative">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              // onChange={handleChange}
-              className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="name"
-              className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left  peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
-            >
-              Your Email
-            </label>
-          </MotionWrapper>
-          <MotionWrapper delay={0.6} animationType="scall" className="relative">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              // onChange={handleChange}
-              className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="name"
-              className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left  peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
-            >
-              Subject
-            </label>
-          </MotionWrapper>
-          <MotionWrapper delay={0.7} animationType="scall" className="relative">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              // onChange={handleChange}
-              className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="name"
-              className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left  peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
-            >
-              Description
-            </label>
-          </MotionWrapper>
-
-          <div className="w-full flex justify-center pt-4 md:pt-9">
-            <div>
-              <FireflyButton
-                text="Send"
-                backgroundColor="#000000cc"
-                textColor="#ffffff"
-                glowColor="#ffffff"
-                fireflyCount={15}
-                fontSize="1rem"
-                padding="1rem 3rem"
-                onClick={() => alert("Glowing button clicked!")}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Name Input */}
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
+                placeholder=" "
+                required
               />
+              <label
+                htmlFor="name"
+                className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
+              >
+                Your Name
+              </label>
             </div>
-          </div>
+
+            {/* Email Input */}
+            <div className="relative mt-4">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
+                placeholder=" "
+                required
+              />
+              <label
+                htmlFor="email"
+                className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
+              >
+                Your Email
+              </label>
+            </div>
+
+            {/* Subject Input */}
+            <div className="relative mt-4">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
+                placeholder=" "
+                required
+              />
+              <label
+                htmlFor="subject"
+                className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
+              >
+                Subject
+              </label>
+            </div>
+
+            {/* Message Input */}
+            <div className="relative mt-4">
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="peer w-full p-2 text-gray-300 border-b bg-transparent border-gray-300 focus:outline-none caret-gray-500"
+                placeholder=" "
+                required
+                rows={4}
+              />
+              <label
+                htmlFor="message"
+                className="absolute left-2 -top-2.5 text-sm font-medium text-[#4BDE80] px-1 transition-all duration-500 transform scale-90 origin-top-left peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-white peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-gray-200 peer-focus:scale-90"
+              >
+                Message
+              </label>
+            </div>
+
+            <div className="w-full flex flex-col items-center pt-4 md:pt-9">
+              <div>
+                <FireflyButton
+                  type="submit"
+                  text={isSending ? "Sending..." : "Send"}
+                  backgroundColor="#000000cc"
+                  textColor="#ffffff"
+                  glowColor="#ffffff"
+                  fireflyCount={15}
+                  fontSize="1rem"
+                  padding="1rem 3rem"
+                  disabled={isSending}
+                />
+              </div>
+              {statusMessage && (
+                <p className={`mt-4 text-sm ${statusMessage.includes("successfully") ? "text-green-500" : "text-red-500"}`}>
+                  {statusMessage}
+                </p>
+              )}
+            </div>
+          </form>
         </MotionWrapper>
       </div>
     </section>
