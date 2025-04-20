@@ -19,7 +19,7 @@ const Home = () => {
           <Spotlight />
         </div>
           <Image />
-        <MotionWrapper triggerOnce="true" className="absolute md:-right-[30%] -right-[50%] -bottom-[20%] z-[-1]" >
+        <MotionWrapper triggerOnce="true" className="absolute -right-[50%] md:-right-[45%] lg:-right-[35%] xl:-right-[30%] 2xl:-right-[20%] -bottom-[20%] z-[-1]" >
         <World />
       </MotionWrapper>
       </section>
