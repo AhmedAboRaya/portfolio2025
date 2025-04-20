@@ -90,9 +90,7 @@ const Contact = () => {
           className="text-4xl md:text-7xl font-semibold"
         >
           Have Any Project In <AuroraText>Mind?</AuroraText>
-          <MotionWrapper animationType="rotate">
           <AnimatedBeamDemo />
-          </MotionWrapper>
           
           
         </MotionWrapper>
