@@ -8,8 +8,8 @@ import MotionWrapper from "./ui/MotionWrapper";
 import { World } from "@/components/ui/globe";
 const Home = () => {
   return (
-    <MotionWrapper triggerOnce={true} delay={0.2} className="" id="home">
-      <section className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 ">
+    <MotionWrapper triggerOnce={true} delay={0.2} className="">
+      <section  id="home" className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 ">
         <ScrollProgress />
         <div className="fixed top-0 left-0 w-full md:px-10 z-50">
           <NavbarDemo />
