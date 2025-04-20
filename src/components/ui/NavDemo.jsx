@@ -71,7 +71,7 @@ export function NavbarDemo() {
               <span
                 key={`mobile-link-${idx}`}
                 onClick={() => {setIsMobileMenuOpen(false); scrollTo(item.link)}}
-                className="relative text-white">
+                className="relative text-white cursor-pointer">
                 <span className="block text-white">{item.name}</span>
               </span>
             ))}
