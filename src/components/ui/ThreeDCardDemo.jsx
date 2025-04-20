@@ -1,9 +1,7 @@
 "use client";
 
-import { Pointer } from "../magicui/pointer";
 import { TextAnimate } from "../magicui/text-animate";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import {motion} from "framer-motion"
 import MotionWrapper from "./MotionWrapper";
 
 export function ThreeDCardDemo({

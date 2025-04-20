@@ -1,9 +1,6 @@
-import Orb from "@/blocks/Backgrounds/Orb/Orb";
-import Globe from "./ui/globe1";
-import { Ripple } from "./magicui/ripple";
+
 import { AnimatedList } from "./magicui/animated-list";
 import Notification from "./ui/notification";
-import { IconCloud } from "./magicui/icon-cloud";
 import react from "@/../assets/react.png";
 import html from "@/../assets/html.png";
 import cpp from "@/../assets/cpp.png";

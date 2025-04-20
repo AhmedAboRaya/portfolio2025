@@ -1,5 +1,4 @@
 import TextPressure from "../blocks/TextAnimations/TextPressure/TextPressure";
-import Header from "./Header";
 import Image from "./Image";
 import { Spotlight } from "./ui/spotlight-new";
 import { motion } from "framer-motion";
