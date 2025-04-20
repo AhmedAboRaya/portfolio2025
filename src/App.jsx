@@ -33,7 +33,7 @@ function App() {
       
       {!isLoading && (
         <>
-        <Particles />
+        <Particles  />
           <Home />
           <About />
           <Features />
