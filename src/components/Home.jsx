@@ -11,7 +11,7 @@ const Home = () => {
     <MotionWrapper triggerOnce={true} delay={0.2} className="">
       <section
         id="home"
-        className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20 overflow-x-hidden mt-16 "
+        className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 "
       >
         <ScrollProgress />
         <div className="fixed top-0 left-0 w-full md:px-10 z-50">
@@ -22,12 +22,12 @@ const Home = () => {
           <Spotlight />
         </div>
         <Image />
-        <MotionWrapper
+        {/* <MotionWrapper
           triggerOnce="true"
           className="absolute -right-[50%] md:-right-[45%] lg:-right-[35%] xl:-right-[30%] 2xl:-right-[20%] -bottom-[20%] z-[-1]"
         >
           <World />
-        </MotionWrapper>
+        </MotionWrapper> */}
       </section>
       <motion.div
         className="hidden md:block md:-mt-96 relative z-[-1]"
