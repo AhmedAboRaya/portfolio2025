@@ -4,7 +4,7 @@ const PreLoader = ({ isExiting }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const duration = 4000; 
+    const duration = 3800; 
     const startTime = performance.now();
     
     const updateProgress = (currentTime) => {
@@ -42,12 +42,8 @@ const PreLoader = ({ isExiting }) => {
           <div className="ui-dot"></div>
           <div className="ui-dot"></div>
         </div>
-      </div>
-      
-      {/* Progress bar container */}
-      <div className="w-full px-4 absolute bottom-14">
         <div 
-          className="h-1 bg-gray-600 rounded-full overflow-hidden"
+          className="h-1 md:mt-3 bg-gray-600 rounded-full overflow-hidden"
           style={{ width: '100%' }}
         >
           <div 
@@ -56,6 +52,8 @@ const PreLoader = ({ isExiting }) => {
           />
         </div>
       </div>
+      
+
     </div>
   );
 };
