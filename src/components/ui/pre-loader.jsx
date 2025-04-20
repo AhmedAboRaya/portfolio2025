@@ -36,7 +36,7 @@ const PreLoader = ({ isExiting }) => {
           <div></div>
           <div></div>
         </div>
-        <div className="ui-text">
+        <div className="ui-text text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:pt-7">
           Ahmed Abo-Raya&apos;s Portfolio
           <div className="ui-dot"></div>
           <div className="ui-dot"></div>
@@ -51,7 +51,7 @@ const PreLoader = ({ isExiting }) => {
           style={{ width: '100%' }}
         >
           <div 
-            className="h-full bg-[#4BDE80] transition-all duration-300 ease-out"
+            className="h-full bg-white transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
