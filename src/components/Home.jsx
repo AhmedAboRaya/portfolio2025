@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { NavbarDemo } from "./ui/NavDemo";
 import MotionWrapper from "./ui/MotionWrapper";
+import { World } from "@/components/ui/globe";
 const Home = () => {
   return (
     <MotionWrapper triggerOnce={true} delay={0.2} className="" id="home">
-      <section className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 overflow-hidden">
+      <section className="flex flex-col min-h-screen relative justify-end md:justify-center items-center pb-5 md:px-8 md:pt-20 lg:px-20  mt-16 ">
         <ScrollProgress />
         <div className="fixed top-0 left-0 w-full md:px-10 z-50">
           <NavbarDemo />
@@ -17,16 +18,10 @@ const Home = () => {
         <div className="fixed top-0 left-0 w-full">
           <Spotlight />
         </div>
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          // viewport={{ once: false }}
-          // exit={{ opacity: 0 }}
-        > */}
           <Image />
-        {/* </motion.div> */}
-
+        <MotionWrapper triggerOnce="true" className="absolute md:-right-[30%] -right-[50%] -bottom-[20%] z-[-1]" >
+        <World />
+      </MotionWrapper>
       </section>
       <motion.div
         className="hidden md:block md:-mt-96 relative z-[-1]"
@@ -38,6 +33,7 @@ const Home = () => {
       >
         <TextPressure />
       </motion.div>
+
     </MotionWrapper>
   );
 };
