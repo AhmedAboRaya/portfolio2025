@@ -413,7 +413,7 @@ main {
     transform: scale(2);
     opacity: 0;
     }
-  }}
+  }}  
 
 :root {
   --radius: 0.625rem;
