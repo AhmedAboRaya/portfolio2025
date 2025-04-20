@@ -39,7 +39,7 @@ export default function SkillsPage() {
       >
         {skillsData.map((skill, index) => (
 
-            <MotionWrapper key={skill.name} className="flex flex-col items-center" animationType="scale"  delay={index * 0.1}>
+            <MotionWrapper key={skill.name} className="flex flex-col items-center" animationType="scale" >
             <SkillIcon
               name={skill.name}
               icon={skill.icon}
