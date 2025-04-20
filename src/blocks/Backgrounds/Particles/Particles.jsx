@@ -236,7 +236,7 @@ const Particles = ({
   ]);
 
   return (
-    <MotionWrapper ref={containerRef} className={`w-full h-screen fixed top-0 left-0 z-[-1] ${className}`} />
+    <div ref={containerRef} className={`w-full h-screen fixed top-0 left-0 z-[-1] ${className}`} />
   );
 };
 
