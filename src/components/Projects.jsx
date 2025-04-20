@@ -119,7 +119,7 @@ function Project() {
           </MotionWrapper>
         ))}
       </div>
-      <MotionWrapper triggerOnce="true" className="absolute right-[50%] md:right-[75%] -bottom-[20%] z-[-1]" >
+      <MotionWrapper triggerOnce="true" className="absolute right-[50%] md:right-[75%] -bottom-[7%] md:-bottom-[10%] lg:-bottom-[15%] xl:-bottom-[20%] z-[-1] " >
         <World />
       </MotionWrapper>
     </setion>
