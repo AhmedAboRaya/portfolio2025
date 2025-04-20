@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="text-white pt-16 px-5 min-h-screen w-full flex items-center flex-col"
+      className="text-white pt-16 px-5 min-h-screen w-full flex items-center flex-col pb-16"
     >
       <motion.h1
         className="aboutTitle text-white font-extrabold w-full text-9xl text-center"
