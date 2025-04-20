@@ -9,8 +9,12 @@ const MotionWrapper = ({
   duration = 0.8,
   threshold = 0.2,
   className = "",
+  triggerOnce = false,
 }) => {
-  const [ref, inView] = useInView({ triggerOnce: false, threshold });
+  const [ref, inView] = useInView({
+    triggerOnce, // Use the prop here
+    threshold,
+  });
 
   const animations = {
     fade: {
@@ -51,8 +55,9 @@ const MotionWrapper = ({
       ref={ref}
       initial={selectedAnimation.initial}
       animate={inView ? selectedAnimation.animate : selectedAnimation.initial}
+      exit={selectedAnimation.exit} // Add exit animation
       transition={{ duration, delay, ease: "easeOut" }}
-      className={`${className}`}
+      className={className}
     >
       {children}
     </motion.div>
