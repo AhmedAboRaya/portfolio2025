@@ -548,7 +548,6 @@ main {
 .ui-abstergo .ui-text {
   color: var(--primary);
   text-shadow: 0 0 var(--text-shadow-blur) var(--secondary);
-  font-family: Menlo, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -558,7 +557,7 @@ main {
   -webkit-column-gap: 3px;
   -moz-column-gap: 3px;
   column-gap: 3px;
-  font-size: 2rem;
+
   font-weight: 700;
 }
 
