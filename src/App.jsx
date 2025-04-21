@@ -9,7 +9,6 @@ import PreLoader from "./components/ui/pre-loader";
 import SkillsPage from "./components/Skills";
 import Particles from "./blocks/Backgrounds/Particles/Particles";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,20 +26,18 @@ function App() {
   return (
     <>
       {isLoading && <PreLoader isExiting={isExiting} />}
-      
+
       <SplashCursor />
-      
-      
+
       {!isLoading && (
         <>
-        <Particles  />
+          <Particles />
           <Home />
           <About />
           <Features />
           <Project />
           <SkillsPage />
           <Contact />
-          {/* <Footer /> */}
         </>
       )}
     </>
