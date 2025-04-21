@@ -17,8 +17,6 @@ import { TextAnimate } from "./magicui/text-animate";
 import { World } from "@/components/ui/globe";
 
 function Project() {
-
-
   const projects = [
     {
       title: "Waqar",
@@ -43,7 +41,7 @@ function Project() {
       description: "Book visits and track meds.",
       link: "https://github.com/AhmedAboRaya/MedReserve.git",
       img: "/MedRev.png",
-      tech: [ js, node, express, mongo, postman, figma],
+      tech: [js, node, express, mongo, postman, figma],
     },
     {
       title: "Manasety",
@@ -52,7 +50,7 @@ function Project() {
       link: "https://youtu.be/p5cD14k9Loc",
       tryLink: "https://manasty-phi.vercel.app/",
       img: "/Manasety.png",
-      tech: [react, js, tailwind, node, express, mongo, figma,],
+      tech: [react, js, tailwind, node, express, mongo, figma],
     },
     {
       title: "Egy-Rack",
@@ -61,7 +59,7 @@ function Project() {
       link: "https://youtu.be/ofzGAVZGfEY",
       tryLink: "https://egy-rack.vercel.app/",
       img: "/EgyRack.png",
-      tech: [react, js, tailwind, node, express, mongo, figma,],
+      tech: [react, js, tailwind, node, express, mongo, figma],
     },
     {
       title: "TaskTracker",
@@ -87,10 +85,11 @@ function Project() {
     // },
   ];
 
-  
-
   return (
-    <setion id="projects" className="min-h-screen relative pt-24 md:mt-32 flex flex-col items-center justify-center px-5">
+    <setion
+      id="projects"
+      className="min-h-screen relative pt-24 md:mt-32 flex flex-col items-center justify-center px-5"
+    >
       <motion.h1
         className="aboutTitle text-white font-extrabold text-center text-9xl"
         initial={{ opacity: 0, y: -50 }}
@@ -100,11 +99,17 @@ function Project() {
         exit={{ opacity: 0, y: -50 }}
       >
         <TextAnimate animation="blurInUp" by="character">
-        PROJECTS</TextAnimate>
+          PROJECTS
+        </TextAnimate>
       </motion.h1>
       <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 ">
         {projects.map((project, index) => (
-          <MotionWrapper animationType="slideUp" key={index} delay={index * 0.1}>
+          <MotionWrapper
+            className="hidden md:flex"
+            animationType="slideUp"
+            key={index}
+            delay={index * 0.1}
+          >
             <DecayCard>
               <ThreeDCardDemo
                 title={project.title}
@@ -118,8 +123,30 @@ function Project() {
             </DecayCard>
           </MotionWrapper>
         ))}
+
+        {projects.map((project, index) => (
+          <MotionWrapper
+            className="flex md:hidden"
+            animationType="slideUp"
+            key={index}
+            delay={index * 0.1}
+          >
+              <ThreeDCardDemo
+                title={project.title}
+                disc={project.description}
+                subTitle={project.subTitle}
+                img={project.img}
+                tryLink={project.tryLink}
+                link={project.link}
+                tech={project.tech}
+              />
+          </MotionWrapper>
+        ))}
       </div>
-      <MotionWrapper triggerOnce="true" className="absolute right-[50%] md:right-[75%] -bottom-[7%] md:-bottom-[10%] lg:-bottom-[15%] xl:-bottom-[20%] z-[-1] " >
+      <MotionWrapper
+        triggerOnce="true"
+        className="absolute right-[50%] md:right-[75%] -bottom-[7%] md:-bottom-[10%] lg:-bottom-[15%] xl:-bottom-[20%] z-[-1] "
+      >
         <World />
       </MotionWrapper>
     </setion>
