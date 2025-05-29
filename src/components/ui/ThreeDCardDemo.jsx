@@ -21,32 +21,41 @@ export function ThreeDCardDemo({
         <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-[#4BDE80] rounded-bl-lg"></div>
         <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-[#4BDE80] rounded-br-lg"></div>
         <div className="absolute -top-5 left-1/2 font-medium transform tracking-widest flex justify-center items-center -translate-x-1/2 bg-[#203B2A] text-[#4BDE80] border border-[#4BDE80] text-[20px] h-10 px-6 rounded-full z-20">
-        <TextAnimate animation="scaleUp" by="text">
-          {title || "Make things float in air"}</TextAnimate>
+          <TextAnimate animation="scaleUp" by="text">
+            {title || "Make things float in air"}
+          </TextAnimate>
         </div>
-        
+
         <CardItem className="text-xl  mt-4 text-white text-center w-full ">
           <TextAnimate animation="scaleUp" by="text">
-          {subTitle || "Make things float in air"}</TextAnimate>
+            {subTitle || "Make things float in air"}
+          </TextAnimate>
         </CardItem>
         <CardItem
           as="p"
           className=" text-lg  mt-2 text-white font-light text-center w-full "
         >
           <TextAnimate animation="scaleUp" by="text">
-          {disc ||
-            "Hover over this card to unleash the power of CSS perspective"}</TextAnimate>
+            {disc ||
+              "Hover over this card to unleash the power of CSS perspective"}
+          </TextAnimate>
         </CardItem>
         <CardItem className="w-full mt-4">
-        <TextAnimate segmentClassName={"w-full"} className={"w-full"} animation="scaleUp" by="text">
-          <img
-            src={
-              img ||
-              "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-          /></TextAnimate>
+          <TextAnimate
+            segmentClassName={"w-full"}
+            className={"w-full"}
+            animation="scaleUp"
+            by="text"
+          >
+            <img
+              src={
+                img ||
+                "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
+              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          </TextAnimate>
         </CardItem>
         <div className="flex justify-center items-center mt-7">
           {tech.map((item, index) => {
@@ -71,7 +80,6 @@ export function ThreeDCardDemo({
                   className="size-6 transition-transform duration-300 group-hover:scale-105 group-hover:skew-x-12 group-hover:skew-y-6"
                 />
               </MotionWrapper>
-              
             );
           })}
         </div>
@@ -94,25 +102,24 @@ export function ThreeDCardDemo({
             )}
           </CardItem>
           {tryLink && (
-            <CardItem
-              translateZ={20}
-              translateX={40}
-              as="button"
-              className="px-4 py-2 rounded-xl text-white flex justify-center items-center tracking-wider text-xs font-medium cursor-pointer border border-[#4BDE80] bg-transparent hover:bg-[#4BDE80] hover:text-black duration-300"
+            <a
+              href={tryLink}
+              className="text-[18px]"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                href={tryLink}
-                className="text-[18px]"
-                target="_blank"
-                rel="noopener noreferrer"
+              <CardItem
+                translateZ={20}
+                translateX={40}
+                as="button"
+                className="px-4 py-2 rounded-xl text-white flex justify-center items-center tracking-wider text-xs font-medium cursor-pointer border border-[#4BDE80] bg-transparent hover:bg-[#4BDE80] hover:text-black duration-300"
               >
-                Try now{" "}
-              </a>
-            </CardItem>
+                Try now
+              </CardItem>
+            </a>
           )}
         </div>
       </CardBody>
     </CardContainer>
   );
 }
-
