@@ -19,6 +19,15 @@ import { World } from "@/components/ui/globe";
 function Project() {
   const projects = [
     {
+      title: "Aokaaze Sushi",
+      subTitle: "Restaurant Website",
+      description: "Book, order, and enjoy sushi online.",
+      link: "https://www.linkedin.com/posts/ahmed-abo-raya_fullstackdevelopment-reactjs-nodejs-activity-7333094398420750336-HU70?utm_source=share&utm_medium=member_desktop&rcm=ACoAADan3KsBYwogVwex0VfuSXO14V3ytH-n0-4", 
+      tryLink: "https://aokaaze-sushi.vercel.app/", 
+      img: "/aokaaze-sushi.png",
+      tech: [react, ts, tailwind, node, express, mongo, postman, figma],
+    },
+    {
       title: "Waqar",
       subTitle: "Saudi E-commerce",
       description: "Online store for traditional wear.",
@@ -61,15 +70,15 @@ function Project() {
       img: "/EgyRack.png",
       tech: [react, js, tailwind, node, express, mongo, figma],
     },
-    {
-      title: "TaskTracker",
-      subTitle: "Productivity Tool",
-      description: "Manage tasks and progress.",
-      link: "https://youtu.be/GC8Z3Z1Z7-Q",
-      tryLink: "https://depi-final-project-m1eh.vercel.app/",
-      img: "/taskTracker.png",
-      tech: [react, js, tailwind, node, express, mongo],
-    },
+    // {
+    //   title: "TaskTracker",
+    //   subTitle: "Productivity Tool",
+    //   description: "Manage tasks and progress.",
+    //   link: "https://youtu.be/GC8Z3Z1Z7-Q",
+    //   tryLink: "https://depi-final-project-m1eh.vercel.app/",
+    //   img: "/taskTracker.png",
+    //   tech: [react, js, tailwind, node, express, mongo],
+    // },
 
     // {
     //     title: "Shopping Website",
