@@ -112,7 +112,7 @@ export function ThreeDCardDemo({
                 translateZ={20}
                 translateX={40}
                 as="button"
-                className="px-4 py-2 rounded-xl text-white flex justify-center items-center tracking-wider text-xs font-medium cursor-pointer border border-[#4BDE80] bg-transparent hover:bg-[#4BDE80] hover:text-black duration-300"
+                className="px-4 py-2 text-[18px] rounded-xl text-white flex justify-center items-center tracking-wider text-xs font-medium cursor-pointer border border-[#4BDE80] bg-transparent hover:bg-[#4BDE80] hover:text-black duration-300"
               >
                 Try now
               </CardItem>
