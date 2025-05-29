@@ -32,6 +32,7 @@ function Project() {
       subTitle: "Saudi E-commerce",
       description: "Online store for traditional wear.",
       tryLink: "https://waqar-shemagh.vercel.app/",
+      link: "https://youtu.be/IC-bWDz2TT8",
       img: "/waqar.png",
       tech: [next, ts, tailwind, node, express, mongo, redux, figma],
     },
